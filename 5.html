@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="bloco"></div>
+    <div>
+        <img id="imagem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/SC_Internacional_Brazil_Logo.svg/250px-SC_Internacional_Brazil_Logo.svg.png">
+    </div>
+
+    <button id="botao">Click me</button>
+    <button onclick="trocaImagem()">Outro botão</button>
+    <script>
+       
+
+        //Manipulação de atributos
+        const img = document.getElementById("imagem");
+        console.log(img.getAttribute("src"));
+
+        //Nova imagem
+        img.setAttribute("src", "https://images.mantosdofutebol.com.br/wp-content/uploads/2024/10/escudo-Corinthians.png")
+        //img.removeAttribute("src");
+
+        //Eventos
+        const button = document.getElementById("botao");
+        button.addEventListener("click", function(){
+            console.log("Entrou!")
+            img.setAttribute("src","https://images.mantosdofutebol.com.br/wp-content/uploads/2024/10/escudo-Corinthians.png")
+        })
+
+        function trocaImagem(){
+            img.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/SC_Internacional_Brazil_Logo.svg/250px-SC_Internacional_Brazil_Logo.svg.png")
+        }
+       
+       
+    </script>
+</body>
+</html>
