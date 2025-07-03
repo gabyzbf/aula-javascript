@@ -1,42 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
-    <div id="bloco"></div>
-    <div>
-        <img id="imagem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/SC_Internacional_Brazil_Logo.svg/250px-SC_Internacional_Brazil_Logo.svg.png">
-    </div>
-
-    <button id="botao">Click me</button>
-    <button onclick="trocaImagem()">Outro botão</button>
-    <script>
-       
-
-        //Manipulação de atributos
-        const img = document.getElementById("imagem");
-        console.log(img.getAttribute("src"));
-
-        //Nova imagem
-        img.setAttribute("src", "https://images.mantosdofutebol.com.br/wp-content/uploads/2024/10/escudo-Corinthians.png")
-        //img.removeAttribute("src");
-
-        //Eventos
-        const button = document.getElementById("botao");
-        button.addEventListener("click", function(){
-            console.log("Entrou!")
-            img.setAttribute("src","https://images.mantosdofutebol.com.br/wp-content/uploads/2024/10/escudo-Corinthians.png")
-        })
-
-        function trocaImagem(){
-            img.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/SC_Internacional_Brazil_Logo.svg/250px-SC_Internacional_Brazil_Logo.svg.png")
+    <style>
+        img {
+            width: 300px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
         }
-       
-       
-    </script>
+        texto{
+            text-align: center;
+        }
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    </head>
+
+    <body>
+        <h1 id="texto">Princesas Disney</h1>
+        <img id="imagem" src="https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2025/03/princesas-disney.png?w=1200&h=900&crop=0" alt="Imagem">
+        <button onclick="trocarImagem()">Próxima Imagem</button>
+        <script>
+            const imagens = [
+                "https://recreio.com.br/wp-content/uploads/disney/enrolados_capa.jpg",
+                "https://www.estadao.com.br/resizer/Q9WUNWsR2ewL1fVD8lSvfYUT5uA=/arc-anglerfish-arc2-prod-estadao/public/TMC7N6Q6RRPILHNPGHSXSFDCMM.jpg",
+                "https://i0.wp.com/cromossomonerd.com.br/wp-content/uploads/2016/10/imagem-destacada-mulan.png?fit=1068%2C600",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBbtgmJgR5O3bmBuAZOIwWV74L7ET3wI1-LQ&s",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz-gwpQLzQOyyqwKS5257qKaa-tHlAnEBLWw&s", 
+            ];
+
+            let indiceAtual = 0;
+
+            function trocarImagem() {
+                indiceAtual = (indiceAtual + 1) % imagens.length;
+                document.getElementById('imagem').src = imagens[indiceAtual];
+            }
+        </script>
+
+    </body>
+
+</html>
+
+
+
 </body>
+
 </html>

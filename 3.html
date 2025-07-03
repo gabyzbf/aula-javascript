@@ -1,20 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2 id="h2"></h2>
-
-    <button onclick="alterarTexto()">alterarTexto</button>
-   
-    <script>
-        function alterarTexto() {
-            document.getElementById("h2").textContent = "";
+    <title>Ocultar Texto</title>
+    <style>
+        #blocoTexto {
+            padding: 15px;
+            background-color: #bfabf5;
+            width: 300px;
+            margin: 20px auto;
         }
+
+        #botao {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="blocoTexto">A personagem Rapunzel é uma jovem de longos cabelos da cor do ouro, aprisionada no alto de uma torre por uma bruxa vingativa. O ápice da história acontece quando um príncipe encontra a torre de Rapunzel e passa a encontrá-la secretamente..</div>
+    <button id="botaoToggle">Ocultar Texto</button>
+
+    <script>
+        const bloco = document.getElementById('blocoTexto');
+        const botao = document.getElementById('botaoToggle');
+
+        botao.addEventListener('click', () => {
+            if (bloco.style.display === 'none') {
+                bloco.style.display = 'block';
+                botao.textContent = 'Ocultar Texto';
+            } else {
+                bloco.style.display = 'none';
+                botao.textContent = 'Mostrar Texto';
+            }
+        });
     </script>
-   
+
 </body>
+
 </html>

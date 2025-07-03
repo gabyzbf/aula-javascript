@@ -4,18 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
-    <h2 id="h2"></h2>
-
-    <button onclick="alterarTexto()">alterarTexto</button>
-   
-    <script>
-        function alterarTexto() {
-            document.getElementById("h1").textContent = "";
-            document.getElementById("h2").textContent = "";
+    <style>
+        #retangulo {
+            width: 200px;
+            height: 100px;
+            background-color: rgb(184, 75, 235);
+            margin: 20px auto;
+            transition: background-color 0.3s;
         }
+
+        #botaoCor {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="retangulo"></div>
+    <button id="botaoCor">Mudar Cor</button>
+
+    <script>
+        const retangulo = document.getElementById('retangulo');
+        const botao = document.getElementById('botaoCor');
+        const cores = ['blue', 'green', 'red', 'orange', 'purple'];
+        let indiceCor = 0;
+
+        botao.addEventListener('click', () => {
+            indiceCor = (indiceCor + 1) % cores.length;
+            retangulo.style.backgroundColor = cores[indiceCor];
+        });
     </script>
-   
+
 </body>
+
 </html>

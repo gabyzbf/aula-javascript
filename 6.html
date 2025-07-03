@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Exibição de Texto em Tempo Real</title>
+  <style>
+    #display {
+      margin-top: 10px;
+      padding: 8px;
+      border: 1px solid #ccc;
+      min-height: 20px;
+      font-family: Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="inputText">Digite algo:</label>
+  <input type="text" id="inputText" />
+
+  <div id="display"></div>
+
+  <script>
+    const input = document.getElementById('inputText');
+    const display = document.getElementById('display');
+
+    input.addEventListener('input', () => {
+      display.textContent = input.value;
+    });
+  </script>
+
+</body>
+</html>

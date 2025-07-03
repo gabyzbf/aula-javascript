@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <style>
+    p {
+      font-size: 18px;
+      color: black;
+      transition: all 0.3s ease;
+    }
+
+    .estiloDestacado {
+      color: rgb(136, 35, 122);
+      font-weight: bold;
+      font-style: italic;
+      text-decoration: underline;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="texto">Estilo.</p>
+  <button onclick="alternarEstilo()">Alternar Estilo</button>
+
+  <script>
+    function alternarEstilo() {
+      const paragrafo = document.getElementById('texto');
+      paragrafo.classList.toggle('estiloDestacado');
+    }
+  </script>
+
+</body>
+</html>

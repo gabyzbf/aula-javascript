@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <style>
+    #imagem {
+      width: 300px;
+      height: auto;
+      transition: width 0.3s ease;
+      display: block;
+      margin-bottom: 10px;
+    }
+    button {
+      margin-right: 10px;
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="imagem" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/US_one_dollar_bill%2C_obverse%2C_series_2009.jpg/960px-US_one_dollar_bill%2C_obverse%2C_series_2009.jpg" alt="Imagem Exemplo" />
+
+  <button id="btnAumentar">Aumentar</button>
+  <button id="btnDiminuir">Diminuir</button>
+
+  <script>
+    const imagem = document.getElementById('imagem');
+    const btnAumentar = document.getElementById('btnAumentar');
+    const btnDiminuir = document.getElementById('btnDiminuir');
+
+    
+    const minWidth = 100; 
+    const maxWidth = 800; 
+    const step = 50; 
+
+    btnAumentar.addEventListener('click', () => {
+      let larguraAtual = imagem.width;
+      if (larguraAtual + step <= maxWidth) {
+        imagem.style.width = (larguraAtual + step) + 'px';
+      }
+    });
+
+    btnDiminuir.addEventListener('click', () => {
+      let larguraAtual = imagem.width;
+      if (larguraAtual - step >= minWidth) {
+        imagem.style.width = (larguraAtual - step) + 'px';
+      }
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Soma de Números</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      margin: 5px;
+      padding: 8px;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Somar Números</h2>
+
+  <input type="number" id="numero1" placeholder="Digite o primeiro número">
+  <input type="number" id="numero2" placeholder="Digite o segundo número">
+  <button onclick="somar()">Somar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function somar() {
+      
+      const num1 = parseFloat(document.getElementById('numero1').value);
+      const num2 = parseFloat(document.getElementById('numero2').value);
+
+      
+      if (isNaN(num1) || isNaN(num2)) {
+        document.getElementById('resultado').innerText = 'Por favor, insira dois números válidos.';
+        return;
+      }
+
+      // Realiza a soma
+      const soma = num1 + num2;
+
+      // Exibe o resultado
+      document.getElementById('resultado').innerText = `Resultado: ${soma}`;
+    }
+  </script>
+
+</body>
+</html>
